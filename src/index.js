@@ -48,8 +48,50 @@ export class ConflictError extends ApiError {
   }
 }
 
+export class PayloadTooLarge extends ApiError {
+  constructor (message) {
+    super(413, 'PAYLOAD_TOO_LARGE', message)
+  }
+}
+
+export class TooManyRequestsError extends ApiError {
+  constructor (message) {
+    super(429, 'TOO_MANY_REQUESTS', message)
+  }
+}
+
+export class InternalServerError extends ApiError {
+  constructor (message) {
+    super(500, 'INTERNAL_SERVER_ERROR', message)
+  }
+}
+
 export class DatabaseConnectionError extends ApiError {
   constructor (message) {
     super(500, 'DATABASE_CONNECTION_ERROR', message)
+  }
+}
+
+export class NotImplemented extends ApiError {
+  constructor (message) {
+    super(501, 'NOT_IMPLEMENTED', message)
+  }
+}
+
+export class BadGateway extends ApiError {
+  constructor (message) {
+    super(502, 'BAD_GATEWAY', message)
+  }
+}
+
+export class ServiceUnavailable extends ApiError {
+  constructor (message) {
+    super(503, 'SERVICE_UNAVAILABLE', message)
+  }
+}
+
+export class GatewayTimeout extends ApiError {
+  constructor (message) {
+    super(503, 'GATEWAY_TIMEOUT', message)
   }
 }
