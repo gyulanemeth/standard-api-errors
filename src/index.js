@@ -5,7 +5,7 @@ export class ApiError extends Error {
     this.name = name
   }
 
-  toJson() {
+  toJson () {
     return {
       status: this.status,
       error: {
