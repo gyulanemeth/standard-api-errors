@@ -4,6 +4,16 @@ export class ApiError extends Error {
     this.status = status
     this.name = name
   }
+
+  toJson() {
+    return {
+      status: this.status,
+      error: {
+        name: this.name,
+        message: this.message
+      }
+    }
+  }
 }
 
 export class ValidationError extends ApiError {
@@ -48,7 +58,7 @@ export class ConflictError extends ApiError {
   }
 }
 
-export class PayloadTooLarge extends ApiError {
+export class PayloadTooLargeError extends ApiError {
   constructor (message) {
     super(413, 'PAYLOAD_TOO_LARGE', message)
   }
@@ -72,26 +82,26 @@ export class DatabaseConnectionError extends ApiError {
   }
 }
 
-export class NotImplemented extends ApiError {
+export class NotImplementedError extends ApiError {
   constructor (message) {
     super(501, 'NOT_IMPLEMENTED', message)
   }
 }
 
-export class BadGateway extends ApiError {
+export class BadGatewayError extends ApiError {
   constructor (message) {
     super(502, 'BAD_GATEWAY', message)
   }
 }
 
-export class ServiceUnavailable extends ApiError {
+export class ServiceUnavailableError extends ApiError {
   constructor (message) {
     super(503, 'SERVICE_UNAVAILABLE', message)
   }
 }
 
-export class GatewayTimeout extends ApiError {
+export class GatewayTimeoutError extends ApiError {
   constructor (message) {
-    super(503, 'GATEWAY_TIMEOUT', message)
+    super(504, 'GATEWAY_TIMEOUT', message)
   }
 }
