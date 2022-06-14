@@ -1,6 +1,6 @@
 {
   "name": "standard-api-errors",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Standard API Errors.",
   "type": "module",
   "main": "src/index.js",
@@ -14,8 +14,11 @@
     "url": "git+https://github.com/gyulanemeth/standard-api-errors.git"
   },
   "keywords": [
+    "standard",
     "api",
-    "error"
+    "error",
+    "errors",
+    "HTTP"
   ],
   "bugs": {
     "url": "https://github.com/gyulanemeth/standard-api-errors/issues"

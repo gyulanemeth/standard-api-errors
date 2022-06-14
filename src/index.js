@@ -5,7 +5,7 @@ export class ApiError extends Error {
     this.name = name
   }
 
-  toJson () {
+  toObject () {
     return {
       status: this.status,
       error: {
@@ -37,12 +37,6 @@ export class AuthorizationError extends ApiError {
 export class NotFoundError extends ApiError {
   constructor (message) {
     super(404, 'NOT_FOUND', message)
-  }
-}
-
-export class MongooseNotFoundError extends NotFoundError {
-  constructor (Model, filter) {
-    super(`${Model.modelName} with ${JSON.stringify(filter)} is not found.`)
   }
 }
 
