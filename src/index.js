@@ -102,6 +102,6 @@ export class GatewayTimeoutError extends ApiError {
 
 export class CorsError extends ApiError {
   constructor () {
-    super(undefined, 'CORS_ERROR', 'Failed to fetch CORS error, please contact support')
+    super(null, 'CORS_ERROR', 'Failed to fetch: CORS error. Please contact support.')
   }
 }
